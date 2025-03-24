@@ -3,8 +3,8 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMar
 main_keyboard = ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text="Ищу где отдохнуть"),
-         KeyboardButton(text="Я босс"),],
-        [KeyboardButton(text="О нас"),],
+         KeyboardButton(text="Я босс")],
+        [KeyboardButton(text="О нас")],
     ],
     resize_keyboard=True,
     input_field_placeholder="Выберите пункт меню...",
@@ -25,4 +25,13 @@ admin_keyboard = InlineKeyboardMarkup(
         [InlineKeyboardButton(text="Личный кабинет", callback_data="personal_account"),
          InlineKeyboardButton(text="Настройки профиля", callback_data="profile_settings")],
     ],
+)
+
+
+role_keyboard = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text="... отдыха"),
+         KeyboardButton(text="... управления админкой")],
+    ],
+    resize_keyboard=True,
 )
