@@ -1,16 +1,14 @@
+import logging
 
-import click
 import asyncio
 
 from aiogram import Dispatcher, Bot
 
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
-from aiogram.filters import CommandStart, Command
-from aiogram.types import Message
 
-from parodactyl_bot.cli.start import run
-from parodactyl_bot.handlers.telegram_handlers import router
+from parodactyl_bot.telegram.handlers.telegram_handlers import router as telegram_routers
+from parodactyl_bot.telegram.handlers.auth_handlers import router as user_routers
 
 # @click.group()
 # def main() -> None:
@@ -22,7 +20,10 @@ from parodactyl_bot.handlers.telegram_handlers import router
 TOKEN = "7685179558:AAGaLC89TIClZLJ17moTE4YGP55nCDjUV_w"
 bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dispatcher = Dispatcher()
-dispatcher.include_router(router)
+dispatcher.include_router(telegram_routers)
+dispatcher.include_router(user_routers)
+
+logging.basicConfig(level=logging.INFO)
 
 
 async def main() -> None:
