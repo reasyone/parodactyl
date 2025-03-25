@@ -10,7 +10,7 @@ request_phone_keyboard = ReplyKeyboardMarkup(
 
 request_location_keyboard = ReplyKeyboardMarkup(
     keyboard=[
-        [KeyboardButton(text="Поделись геолокацией", request_location=True)],
+        [KeyboardButton(text="Поделись геолокацией (доступно с телефона)", request_location=True)],
         [KeyboardButton(text="Выберу город из доступного списка")]
     ],
     resize_keyboard=True,
@@ -23,6 +23,7 @@ role_keyboard = ReplyKeyboardMarkup(
          KeyboardButton(text="... управления админкой")],
     ],
     resize_keyboard=True,
+    one_time_keyboard=True,
 )
 
 approve_keyboard = ReplyKeyboardMarkup(
@@ -30,6 +31,7 @@ approve_keyboard = ReplyKeyboardMarkup(
         [KeyboardButton(text="Да"), KeyboardButton(text="Нет")]
     ],
     resize_keyboard=True,
+    one_time_keyboard=True,
 )
 
 manual_choose_city_keyboard = ReplyKeyboardMarkup(
@@ -37,4 +39,5 @@ manual_choose_city_keyboard = ReplyKeyboardMarkup(
         [KeyboardButton(text="Москва"), KeyboardButton(text="Тула")]
     ],
     resize_keyboard=True,
+    one_time_keyboard=True,
 )
